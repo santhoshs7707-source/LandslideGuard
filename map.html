@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LandslideGuard | Risk Map</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🌍 LandslideGuard
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Risk Map</a>
+        <a href="alerts.html">Alerts</a>
+        <a href="analytics.html">Analytics</a>
+    </nav>
+
+    <button class="nav-button">
+        ● Live
+    </button>
+
+</header>
+
+
+<main class="map-page">
+
+    <div class="map-heading">
+
+        <div>
+            <p class="tagline">GIS RISK MONITORING</p>
+
+            <h1>Landslide Risk Map</h1>
+
+            <p>
+                Explore vulnerable regions and current
+                landslide risk levels.
+            </p>
+        </div>
+
+        <div class="map-status">
+            ● LIVE MONITORING
+        </div>
+
+    </div>
+
+
+    <!-- MAP -->
+
+    <div class="map-container">
+        <div id="riskMap"></div>
+    </div>
+
+
+    <!-- LEGEND -->
+
+    <div class="map-legend">
+
+        <strong>Risk Level</strong>
+
+        <div class="legend-item">
+            <span class="legend-dot low"></span>
+            Low Risk
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-dot moderate"></span>
+            Moderate Risk
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-dot high"></span>
+            High Risk
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-dot critical"></span>
+            Critical Risk
+        </div>
+
+    </div>
+
+
+    <!-- MONITORED REGIONS -->
+
+    <section class="map-areas">
+
+        <h2>Monitored Regions</h2>
+
+        <div class="map-area-grid">
+
+
+            <!-- KODAIKANAL -->
+
+            <div
+                class="map-area-card"
+                onclick="openArea('kodaikanal')"
+                style="cursor:pointer;"
+            >
+
+                <h3>Kodaikanal</h3>
+
+                <p>Tamil Nadu</p>
+
+                <div class="area-risk high">
+                    78% — HIGH RISK
+                </div>
+
+            </div>
+
+
+            <!-- OOTY -->
+
+            <div
+                class="map-area-card"
+                onclick="openArea('ooty')"
+                style="cursor:pointer;"
+            >
+
+                <h3>Ooty</h3>
+
+                <p>Tamil Nadu</p>
+
+                <div class="area-risk moderate">
+                    54% — MODERATE
+                </div>
+
+            </div>
+
+
+            <!-- WAYANAD -->
+
+            <div
+                class="map-area-card"
+                onclick="openArea('wayanad')"
+                style="cursor:pointer;"
+            >
+
+                <h3>Wayanad</h3>
+
+                <p>Kerala</p>
+
+                <div class="area-risk low">
+                    32% — LOW RISK
+                </div>
+
+            </div>
+
+
+            <!-- DARJEELING -->
+
+            <div
+                class="map-area-card"
+                onclick="openArea('darjeeling')"
+                style="cursor:pointer;"
+            >
+
+                <h3>Darjeeling</h3>
+
+                <p>West Bengal</p>
+
+                <div class="area-risk moderate">
+                    47% — MODERATE
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+
+<script>
+
+/* =========================
+   CREATE MAP
+========================= */
+
+const map = L.map('riskMap').setView(
+    [11.5, 78.5],
+    6
+);
+
+
+/* =========================
+   OPEN STREET MAP
+========================= */
+
+L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+        attribution:
+        '&copy; OpenStreetMap contributors'
+    }
+).addTo(map);
+
+
+/* =========================
+   AREA OPEN FUNCTION
+========================= */
+
+function openArea(location) {
+
+    window.location.href =
+        "area.html?location=" + location;
+
+}
+
+
+/* =========================
+   KODAIKANAL
+========================= */
+
+L.circle(
+    [10.2381, 77.4892],
+    {
+        color: '#d9534f',
+        fillColor: '#d9534f',
+        fillOpacity: 0.45,
+        radius: 25000
+    }
+)
+.addTo(map)
+.bindPopup(
+    '<b>Kodaikanal</b><br>' +
+    'Risk Score: 78%<br>' +
+    '<b>HIGH RISK</b><br><br>' +
+
+    '<a href="area.html?location=kodaikanal">' +
+    'View Area Details →' +
+    '</a>'
+);
+
+
+/* =========================
+   OOTY
+========================= */
+
+L.circle(
+    [11.4064, 76.6932],
+    {
+        color: '#e0a11b',
+        fillColor: '#e0a11b',
+        fillOpacity: 0.45,
+        radius: 25000
+    }
+)
+.addTo(map)
+.bindPopup(
+    '<b>Ooty</b><br>' +
+    'Risk Score: 54%<br>' +
+    '<b>MODERATE RISK</b><br><br>' +
+
+    '<a href="area.html?location=ooty">' +
+    'View Area Details →' +
+    '</a>'
+);
+
+
+/* =========================
+   WAYANAD
+========================= */
+
+L.circle(
+    [11.6854, 76.1320],
+    {
+        color: '#3c9b72',
+        fillColor: '#3c9b72',
+        fillOpacity: 0.45,
+        radius: 25000
+    }
+)
+.addTo(map)
+.bindPopup(
+    '<b>Wayanad</b><br>' +
+    'Risk Score: 32%<br>' +
+    '<b>LOW RISK</b><br><br>' +
+
+    '<a href="area.html?location=wayanad">' +
+    'View Area Details →' +
+    '</a>'
+);
+
+
+/* =========================
+   DARJEELING
+========================= */
+
+L.circle(
+    [27.0410, 88.2663],
+    {
+        color: '#e0a11b',
+        fillColor: '#e0a11b',
+        fillOpacity: 0.45,
+        radius: 25000
+    }
+)
+.addTo(map)
+.bindPopup(
+    '<b>Darjeeling</b><br>' +
+    'Risk Score: 47%<br>' +
+    '<b>MODERATE RISK</b><br><br>' +
+
+    '<a href="area.html?location=darjeeling">' +
+    'View Area Details →' +
+    '</a>'
+);
+
+</script>
+
+</body>
+</html>
