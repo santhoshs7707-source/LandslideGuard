@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LandslideGuard | Analytics</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🌍 LandslideGuard
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Risk Map</a>
+        <a href="alerts.html">Alerts</a>
+        <a href="analytics.html">Analytics</a>
+    </nav>
+
+    <button class="nav-button">
+        ● Live
+    </button>
+
+</header>
+
+
+<main class="analytics-page">
+
+
+    <!-- HEADER -->
+
+    <div class="analytics-heading">
+
+        <div>
+
+            <p class="tagline">
+                AI DATA & INSIGHTS
+            </p>
+
+            <h1>Risk Analytics</h1>
+
+            <p>
+                Analyze environmental conditions and
+                AI-estimated landslide risk across monitored areas.
+            </p>
+
+        </div>
+
+        <div class="analytics-status">
+            ● Monitoring Active
+        </div>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <section class="analytics-summary">
+
+        <div class="analytics-card">
+
+            <span>📈</span>
+
+            <p>Average Risk</p>
+
+            <h2>53%</h2>
+
+            <small>
+                Across 4 monitored areas
+            </small>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <span>🌧️</span>
+
+            <p>Average Rainfall</p>
+
+            <h2>89 mm</h2>
+
+            <small>
+                Last 24 hours
+            </small>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <span>💧</span>
+
+            <p>Average Soil Moisture</p>
+
+            <h2>58%</h2>
+
+            <small>
+                Current measurements
+            </small>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <span>⚠️</span>
+
+            <p>High Risk Areas</p>
+
+            <h2>1</h2>
+
+            <small>
+                Requires attention
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARTS -->
+
+    <section class="charts-grid">
+
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <div>
+
+                    <h2>Rainfall Trend</h2>
+
+                    <p>
+                        Demonstration rainfall measurements
+                    </p>
+
+                </div>
+
+                <span>mm</span>
+
+            </div>
+
+            <canvas id="rainfallChart"></canvas>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <div>
+
+                    <h2>Risk Score Trend</h2>
+
+                    <p>
+                        AI-estimated risk progression
+                    </p>
+
+                </div>
+
+                <span>%</span>
+
+            </div>
+
+            <canvas id="riskChart"></canvas>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- AREA COMPARISON -->
+
+    <section class="comparison-card">
+
+        <div class="comparison-heading">
+
+            <div>
+
+                <p class="tagline">
+                    REGIONAL ANALYSIS
+                </p>
+
+                <h2>Area Risk Comparison</h2>
+
+                <p>
+                    Current prototype risk scores across
+                    monitored locations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- KODAIKANAL -->
+
+        <div class="area-row">
+
+            <div class="area-name">
+
+                <strong>Kodaikanal</strong>
+
+                <small>
+                    Tamil Nadu
+                </small>
+
+            </div>
+
+            <div class="risk-bar">
+
+                <div
+                    class="risk-fill high"
+                    style="width:78%;">
+                </div>
+
+            </div>
+
+            <strong>78%</strong>
+
+        </div>
+
+
+        <!-- OOTY -->
+
+        <div class="area-row">
+
+            <div class="area-name">
+
+                <strong>Ooty</strong>
+
+                <small>
+                    Tamil Nadu
+                </small>
+
+            </div>
+
+            <div class="risk-bar">
+
+                <div
+                    class="risk-fill moderate"
+                    style="width:54%;">
+                </div>
+
+            </div>
+
+            <strong>54%</strong>
+
+        </div>
+
+
+        <!-- DARJEELING -->
+
+        <div class="area-row">
+
+            <div class="area-name">
+
+                <strong>Darjeeling</strong>
+
+                <small>
+                    West Bengal
+                </small>
+
+            </div>
+
+            <div class="risk-bar">
+
+                <div
+                    class="risk-fill moderate"
+                    style="width:47%;">
+                </div>
+
+            </div>
+
+            <strong>47%</strong>
+
+        </div>
+
+
+        <!-- WAYANAD -->
+
+        <div class="area-row">
+
+            <div class="area-name">
+
+                <strong>Wayanad</strong>
+
+                <small>
+                    Kerala
+                </small>
+
+            </div>
+
+            <div class="risk-bar">
+
+                <div
+                    class="risk-fill low"
+                    style="width:32%;">
+                </div>
+
+            </div>
+
+            <strong>32%</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI INSIGHT -->
+
+    <section class="ai-insight">
+
+        <div class="ai-icon">
+            🤖
+        </div>
+
+        <div>
+
+            <p class="tagline">
+                AI INSIGHT
+            </p>
+
+            <h2>
+                Elevated Risk Detected in Kodaikanal
+            </h2>
+
+            <p>
+                The prototype Random Forest model estimates
+                higher risk conditions for Kodaikanal based
+                on rainfall, soil moisture, terrain slope,
+                elevation and historical event data.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SYSTEM STATUS -->
+
+    <section class="monitoring-box">
+
+        <div>
+
+            <h2>📡 AI Monitoring Status</h2>
+
+            <p>
+                The LandslideGuard prototype is processing
+                environmental parameters and generating
+                demonstration risk estimates.
+            </p>
+
+        </div>
+
+        <div class="monitoring-status">
+            SYSTEM ACTIVE
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="prototype-note">
+
+        <strong>⚠️ Prototype Notice</strong>
+
+        <span>
+            Risk scores and charts shown here use
+            simulated demonstration data and a model
+            trained on synthetic data. They are not
+            operational disaster warnings.
+        </span>
+
+    </div>
+
+
+</main>
+
+
+<footer>
+
+    <h3>🌍 LandslideGuard</h3>
+
+    <p>
+        AI-powered landslide early-warning platform
+    </p>
+
+    <p>
+        © 2026 LandslideGuard | SIH Prototype
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   RAINFALL CHART
+========================= */
+
+const rainfallCanvas =
+    document.getElementById("rainfallChart");
+
+new Chart(rainfallCanvas, {
+
+    type: "line",
+
+    data: {
+
+        labels: [
+            "6 AM",
+            "9 AM",
+            "12 PM",
+            "3 PM",
+            "6 PM",
+            "9 PM"
+        ],
+
+        datasets: [{
+
+            label: "Rainfall",
+
+            data: [
+                28,
+                42,
+                55,
+                76,
+                92,
+                124
+            ],
+
+            tension: 0.4,
+
+            fill: true
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        plugins: {
+
+            legend: {
+                display: false
+            }
+
+        },
+
+        scales: {
+
+            y: {
+                beginAtZero: true
+            }
+
+        }
+
+    }
+
+});
+
+
+/* =========================
+   RISK CHART
+========================= */
+
+const riskCanvas =
+    document.getElementById("riskChart");
+
+new Chart(riskCanvas, {
+
+    type: "line",
+
+    data: {
+
+        labels: [
+            "6 AM",
+            "9 AM",
+            "12 PM",
+            "3 PM",
+            "6 PM",
+            "9 PM"
+        ],
+
+        datasets: [{
+
+            label: "Risk Score",
+
+            data: [
+                42,
+                48,
+                55,
+                61,
+                69,
+                78
+            ],
+
+            tension: 0.4,
+
+            fill: true
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        scales: {
+
+            y: {
+
+                min: 0,
+
+                max: 100
+
+            }
+
+        },
+
+        plugins: {
+
+            legend: {
+                display: false
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
