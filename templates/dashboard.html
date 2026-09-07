@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LandslideGuard | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+
+        <div class="logo">
+            🌍 LandslideGuard
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="map.html">Risk Map</a>
+            <a href="alerts.html">Alerts</a>
+            <a href="analytics.html">Analytics</a>
+        </nav>
+
+        <button class="nav-button">
+            ● Live
+        </button>
+
+    </header>
+
+
+    <!-- Dashboard -->
+
+    <main class="dashboard">
+
+        <div class="dashboard-heading">
+
+            <div>
+                <p class="tagline">REAL-TIME MONITORING</p>
+
+                <h1>Monitoring Dashboard</h1>
+
+                <p>
+                    Monitor environmental conditions and
+                    landslide risk across vulnerable areas.
+                </p>
+            </div>
+
+            <div class="update-box">
+                🕒 Last updated: Just now
+            </div>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">⚠️</div>
+
+                <p>Current Risk</p>
+
+                <h2>32%</h2>
+
+                <span class="status-low">
+                    ● Low Risk
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🌧️</div>
+
+                <p>Rainfall</p>
+
+                <h2>86 mm</h2>
+
+                <span>
+                    Last 24 hours
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">💧</div>
+
+                <p>Soil Moisture</p>
+
+                <h2>64%</h2>
+
+                <span>
+                    Current level
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">⛰️</div>
+
+                <p>Average Slope</p>
+
+                <h2>28°</h2>
+
+                <span>
+                    Terrain analysis
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Main Dashboard Grid -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- Risk Overview -->
+
+            <div class="dashboard-card risk-overview">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Risk Overview</h2>
+                        <p>Current landslide risk assessment</p>
+                    </div>
+
+                    <span class="risk-badge">
+                        LOW
+                    </span>
+
+                </div>
+
+
+                <div class="risk-meter">
+
+                    <div class="meter-number">
+                        32%
+                    </div>
+
+                    <div class="meter-label">
+                        Overall Risk Score
+                    </div>
+
+                </div>
+
+
+                <div class="risk-info">
+
+                    <div>
+                        <strong>Rainfall</strong>
+                        <span>Moderate</span>
+                    </div>
+
+                    <div>
+                        <strong>Soil Moisture</strong>
+                        <span>Normal</span>
+                    </div>
+
+                    <div>
+                        <strong>Terrain</strong>
+                        <span>Moderate Slope</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Area Monitoring -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Monitored Areas</h2>
+                        <p>Current risk levels</p>
+                    </div>
+
+                    <a href="map.html">
+                        View Map →
+                    </a>
+
+                </div>
+
+
+                <div class="area-list">
+
+                    <div class="area" 
+                    onclick="selectArea('kodaikanal')" 
+                    style="cursor:pointer;">
+
+                    <div>
+                    <strong>Kodaikanal</strong>
+                    <small>Tamil Nadu</small>
+                    </div>
+
+                    <span class="risk-high">
+                    78% HIGH
+                    </span>
+
+                    </div>
+
+                    <div class="area" 
+                    onclick="selectArea('ooty')" 
+                    style="cursor:pointer;">
+
+    <div>
+        <strong>Ooty</strong>
+        <small>Tamil Nadu</small>
+    </div>
+
+    <span class="risk-medium">
+        54% MODERATE
+    </span>
+
+</div>
+
+                    <div class="area" 
+                    onclick="selectArea('wayanad')" 
+                    style="cursor:pointer;">
+
+    <div>
+        <strong>Wayanad</strong>
+        <small>Kerala</small>
+    </div>
+
+    <span class="risk-low">
+        32% LOW
+    </span>
+
+</div>
+
+                    <div class="area" 
+                    onclick="selectArea('darjeeling')" 
+                    style="cursor:pointer;">
+
+    <div>
+        <strong>Darjeeling</strong>
+        <small>West Bengal</small>
+    </div>
+
+    <span class="risk-medium">
+        47% MODERATE
+    </span>
+
+</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Alerts -->
+
+        <section class="dashboard-card alerts-section">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Recent Alerts</h2>
+
+                    <p>
+                        Latest system notifications
+                    </p>
+                </div>
+
+                <a href="alerts.html">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="alert-item">
+
+                <span class="alert-symbol">⚠️</span>
+
+                <div>
+
+                    <strong>High Risk Detected</strong>
+
+                    <p>
+                        Kodaikanal — Increased rainfall
+                        and soil moisture detected.
+                    </p>
+
+                </div>
+
+                <span class="alert-time">
+                    12 min ago
+                </span>
+
+            </div>
+
+
+            <div class="alert-item">
+
+                <span class="alert-symbol">ℹ️</span>
+
+                <div>
+
+                    <strong>Moderate Risk</strong>
+
+                    <p>
+                        Ooty — Continuous rainfall
+                        observed in monitored region.
+                    </p>
+
+                </div>
+
+                <span class="alert-time">
+                    35 min ago
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- System Status -->
+
+        <section class="system-status">
+
+            <div>
+                <span class="online-dot"></span>
+                <strong>AI Risk Prediction System</strong>
+                <small>Operational</small>
+            </div>
+
+            <div>
+                <span class="online-dot"></span>
+                <strong>Weather Data</strong>
+                <small>Connected</small>
+            </div>
+
+            <div>
+                <span class="online-dot"></span>
+                <strong>GIS Monitoring</strong>
+                <small>Operational</small>
+            </div>
+
+            <div>
+                <span class="online-dot"></span>
+                <strong>Alert System</strong>
+                <small>Ready</small>
+            </div>
+
+        </section>
+
+    </main>
+    <!-- AI Risk Prediction -->
+
+<section class="ai-prediction">
+
+    <h2>🤖 AI Risk Prediction</h2>
+
+    <div class="prediction-inputs">
+
+        <label>
+            Rainfall (mm)
+            <input type="number" id="rainfall" value="100">
+        </label>
+
+        <label>
+            Soil Moisture (%)
+            <input type="number" id="soilMoisture" value="65">
+        </label>
+
+        <label>
+            Slope (°)
+            <input type="number" id="slope" value="30">
+        </label>
+
+        <label>
+            Elevation (m)
+            <input type="number" id="elevation" value="1500">
+        </label>
+
+        <label>
+            Historical Events
+            <input type="number" id="historicalEvents" value="4">
+        </label>
+
+    </div>
+
+    <button onclick="predictDashboardRisk()">
+        Predict Landslide Risk
+    </button>
+
+    <div id="aiResult" class="ai-result">
+        Enter environmental data and click predict.
+    </div>
+
+    <div class="risk-meter">
+        <div id="riskBar"></div>
+    </div>
+
+    <div class="risk-score">
+        <span id="riskPercentage">--%</span>
+    </div>
+
+    <div id="riskLevel">
+        Waiting for prediction...
+    </div>
+
+</section>
+
+
+<script>
+
+async function predictDashboardRisk() {
+
+    const result = document.getElementById("aiResult");
+    const riskBar = document.getElementById("riskBar");
+    const riskPercentage = document.getElementById("riskPercentage");
+    const riskLevel = document.getElementById("riskLevel");
+
+    result.innerHTML = "🤖 AI is calculating...";
+
+    try {
+
+        const response = await fetch(
+            "/predict",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    rainfall:
+                        Number(document.getElementById("rainfall").value),
+
+                    soil_moisture:
+                        Number(document.getElementById("soilMoisture").value),
+
+                    slope:
+                        Number(document.getElementById("slope").value),
+
+                    elevation:
+                        Number(document.getElementById("elevation").value),
+
+                    historical_events:
+                        Number(document.getElementById("historicalEvents").value)
+
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        result.innerHTML =
+            "<strong>AI Prediction Complete ✅</strong>";
+
+        riskPercentage.innerHTML =
+            data.risk + "%";
+
+        riskBar.style.width =
+            data.risk + "%";
+
+        riskLevel.innerHTML =
+            "Risk Level: <strong>" +
+            data.risk_level +
+            "</strong>";
+
+    }
+
+    catch (error) {
+
+        console.error("AI ERROR:", error);
+
+        result.innerHTML =
+            "❌ Could not connect to AI server.<br>" +
+            "Make sure Flask is running.";
+
+        riskPercentage.innerHTML = "--%";
+
+        riskLevel.innerHTML =
+            "Waiting for prediction...";
+
+        riskBar.style.width = "0%";
+    }
+}
+
+
+function selectArea(area) {
+
+    const locations = {
+
+        kodaikanal: {
+            rainfall: 124,
+            soilMoisture: 72,
+            slope: 34,
+            elevation: 1850,
+            historicalEvents: 7
+        },
+
+        ooty: {
+            rainfall: 92,
+            soilMoisture: 61,
+            slope: 25,
+            elevation: 2240,
+            historicalEvents: 4
+        },
+
+        wayanad: {
+            rainfall: 54,
+            soilMoisture: 42,
+            slope: 19,
+            elevation: 780,
+            historicalEvents: 3
+        },
+
+        darjeeling: {
+            rainfall: 86,
+            soilMoisture: 58,
+            slope: 28,
+            elevation: 2050,
+            historicalEvents: 5
+        }
+
+    };
+
+    const data = locations[area];
+
+    document.getElementById("rainfall").value =
+        data.rainfall;
+
+    document.getElementById("soilMoisture").value =
+        data.soilMoisture;
+
+    document.getElementById("slope").value =
+        data.slope;
+
+    document.getElementById("elevation").value =
+        data.elevation;
+
+    document.getElementById("historicalEvents").value =
+        data.historicalEvents;
+
+    document.getElementById("aiResult").innerHTML =
+        "📍 " +
+        area.charAt(0).toUpperCase() +
+        area.slice(1) +
+        " selected. Click Predict Landslide Risk.";
+
+}
+
+</script>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>🌍 LandslideGuard</h3>
+
+        <p>
+            AI-powered landslide early-warning platform
+        </p>
+
+        <p>
+            © 2026 LandslideGuard | SIH Prototype
+        </p>
+
+    </footer>
